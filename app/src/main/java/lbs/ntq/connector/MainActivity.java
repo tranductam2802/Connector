@@ -27,15 +27,19 @@ public class MainActivity extends BaseActivity {
             Button button = new Button("R370");
             button.setStatus(ButtonStatus.STOP);
             buttonList.add(button);
-            button.setName("MH456");
+
+            button = new Button("MH456");
             button.setStatus(ButtonStatus.PREPARE);
             buttonList.add(button);
-            button.setName("MU796");
+
+            button = new Button("MU796");
             button.setStatus(ButtonStatus.PLAY);
             buttonList.add(button);
-            button.setName("UV136");
-            button.setStatus(ButtonStatus.DISABLE);
+
+            button = new Button("UV136");
+            button.setStatus(ButtonStatus.LOCK);
             buttonList.add(button);
+            adapter.setListButton(buttonList);
         }
 
         listButton.setAdapter(adapter);
