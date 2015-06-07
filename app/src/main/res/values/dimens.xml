@@ -7,6 +7,11 @@
     <!-- Button -->
     <dimen name="button_size">150dp</dimen>
     <dimen name="button_margin">20dp</dimen>
-    <dimen name="button_padding">10dp</dimen>
+    <dimen name="button_padding">5dp</dimen>
     <dimen name="button_radius">75dp</dimen>
+
+    <!-- Drawer -->
+    <dimen name="drawer_item_width">340dp</dimen>
+    <dimen name="drawer_item_padding">15dp</dimen>
+    <dimen name="drawer_bottom_line_padding">5dp</dimen>
 </resources>

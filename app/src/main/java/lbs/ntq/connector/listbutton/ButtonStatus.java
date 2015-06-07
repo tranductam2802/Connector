@@ -10,4 +10,5 @@ public final class ButtonStatus {
     public static final int LOCK = 3;
 
     public static String NON_TASK_MSG = "N/A";
+    public static String RINGING_MSG = "Ringing";
 }

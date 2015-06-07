@@ -4,8 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,6 +20,10 @@ import lbs.ntq.connector.R;
 public class ListButtonAdapter extends BaseAdapter {
     private Context context;
     private List<Button> listButton;
+
+    public interface IOnButtonClicked {
+
+    }
 
     public ListButtonAdapter(Context context) {
         this.context = context;
@@ -51,7 +56,7 @@ public class ListButtonAdapter extends BaseAdapter {
             holder.txtTime = (TextView) convertView.findViewById(R.id.time);
             holder.txtName = (TextView) convertView.findViewById(R.id.name);
             holder.vBorder = convertView.findViewById(R.id.button_border);
-            holder.imgButton = (ImageView) convertView.findViewById(R.id.button);
+            holder.imgButton = convertView.findViewById(R.id.button);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -74,8 +79,14 @@ public class ListButtonAdapter extends BaseAdapter {
                 break;
             case ButtonStatus.PLAY:
                 holder.imgButton.setBackgroundResource(R.drawable.button_play_shape);
+                Animation animation = AnimationUtils.loadAnimation(
+                        context.getApplicationContext(), R.anim.blink);
+                holder.vBorder.startAnimation(animation);
+                holder.txtTime.startAnimation(animation);
+                holder.txtTime.setText(ButtonStatus.RINGING_MSG);
                 break;
             case ButtonStatus.LOCK:
+                holder.txtTime.setText(ButtonStatus.NON_TASK_MSG);
                 holder.imgButton.setBackgroundResource(R.drawable.button_lock_shape);
                 break;
         }
@@ -87,7 +98,7 @@ public class ListButtonAdapter extends BaseAdapter {
         public TextView txtName;
         public TextView txtTime;
         public View vBorder;
-        public ImageView imgButton;
+        public View imgButton;
     }
 
     public void setListButton(List<Button> listButton) {

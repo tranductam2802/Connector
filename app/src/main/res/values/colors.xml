@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="button_stop">#FFBF360C</color>
-    <color name="button_prepare">#FFFFC107</color>
-    <color name="button_play">#FF4CAF50</color>
+    <color name="button_stop">#FFFF3311</color>
+    <color name="button_prepare">#FFFFCC00</color>
+    <color name="button_play">#FF55BB00</color>
     <color name="button_lock">#FF9E9E9E</color>
-    <color name="button_border">#FF2979FF</color>
+    <color name="button_border">#FF0099FF</color>
+    <color name="line">#FF939393</color>
 </resources>

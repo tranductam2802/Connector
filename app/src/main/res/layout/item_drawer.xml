@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/drawer_item_padding"
+    android:paddingRight="@dimen/drawer_item_padding">
+
+    <TextView
+        android:id="@id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/drawer_item_padding"
+        android:text="11:30"
+        android:textColor="@color/line"
+        android:textSize="38sp"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/time"
+        android:layout_toRightOf="@id/time"
+        android:paddingBottom="4dp"
+        android:paddingLeft="2dp"
+        android:text="AM"
+        android:textColor="@color/line"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@id/schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time"
+        android:layout_marginBottom="@dimen/drawer_item_padding"
+        android:text="Scheduled, every "
+        android:textColor="@color/line"
+        android:textSize="14sp"
+        android:textStyle="italic|bold"
+        android:typeface="sans" />
+
+    <ImageView
+        android:id="@+id/schedule_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/switcher" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/drawer_bottom_line_padding"
+        android:layout_marginRight="@dimen/drawer_bottom_line_padding"
+        android:background="@color/line" />
+</RelativeLayout>

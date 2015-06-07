@@ -4,9 +4,18 @@ package lbs.ntq.connector.listbutton;
  * Created by PhuongQuynh on 31/05/2015.
  */
 public class Button {
+    private String id = "";
     private String name = "";
     private String timestamp = ButtonStatus.NON_TASK_MSG;
     private int status = ButtonStatus.STOP;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
