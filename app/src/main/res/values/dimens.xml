@@ -10,8 +10,9 @@
     <dimen name="button_padding">5dp</dimen>
     <dimen name="button_radius">75dp</dimen>
 
-    <!-- Drawer -->
+    <!-- Schedule -->
     <dimen name="drawer_item_width">340dp</dimen>
     <dimen name="drawer_item_padding">15dp</dimen>
     <dimen name="drawer_bottom_line_padding">5dp</dimen>
+    <dimen name="schedule_button_height">48dp</dimen>
 </resources>

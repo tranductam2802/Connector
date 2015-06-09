@@ -6,4 +6,6 @@
     <color name="button_lock">#FF9E9E9E</color>
     <color name="button_border">#FF0099FF</color>
     <color name="line">#FF939393</color>
+    <color name="gray">#FFE0E0E0</color>
+    <color name="yellow">#FFFD9F00</color>
 </resources>

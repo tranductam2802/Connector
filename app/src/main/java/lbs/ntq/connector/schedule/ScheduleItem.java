@@ -1,4 +1,4 @@
-package lbs.ntq.connector.drawer;
+package lbs.ntq.connector.schedule;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import lbs.ntq.connector.listbutton.Button;
 /**
  * Created by PhuongQuynh on 02/06/2015.
  */
-public class DrawerItem {
+public class ScheduleItem {
     private String id;
     private String timestamp = "11:33AM";
     private List<Button> buttonList;

@@ -1,4 +1,4 @@
-package lbs.ntq.connector.drawer;
+package lbs.ntq.connector.schedule;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,16 +16,16 @@ import lbs.ntq.connector.R;
 /**
  * Created by PhuongQuynh on 02/06/2015.
  */
-public class DrawerAdapter extends BaseAdapter {
+public class ScheduleAdapter extends BaseAdapter {
     private Context context;
-    private List<DrawerItem> itemList;
+    private List<ScheduleItem> itemList;
 
-    public DrawerAdapter(Context context) {
+    public ScheduleAdapter(Context context) {
         this.context = context;
-        itemList = new ArrayList<DrawerItem>();
+        itemList = new ArrayList<ScheduleItem>();
     }
 
-    public void setItemList(List<DrawerItem> itemList) {
+    public void setItemList(List<ScheduleItem> itemList) {
         if (itemList != null) {
             this.itemList = itemList;
         }
@@ -37,7 +37,7 @@ public class DrawerAdapter extends BaseAdapter {
     }
 
     @Override
-    public DrawerItem getItem(int position) {
+    public ScheduleItem getItem(int position) {
         return itemList.get(position);
     }
 
@@ -52,7 +52,7 @@ public class DrawerAdapter extends BaseAdapter {
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item_drawer, parent, false);
+            convertView = inflater.inflate(R.layout.item_schedule, parent, false);
             holder = new ViewHolder();
 
             holder.btnStatus = (ImageView) convertView.findViewById(R.id.schedule_status);

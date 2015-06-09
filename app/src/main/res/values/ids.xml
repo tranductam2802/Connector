@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="list_button" type="id" />
-    <item name="list_drawer" type="id" />
+    <item name="list_schedule" type="id" />
     <item name="button" type="id" />
     <item name="button_border" type="id" />
     <item name="time" type="id" />

@@ -6,17 +6,21 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.GridView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import lbs.ntq.BaseActivity;
-import lbs.ntq.connector.drawer.DrawerAdapter;
+import lbs.ntq.connector.listbutton.Button;
+import lbs.ntq.connector.listbutton.ButtonStatus;
 import lbs.ntq.connector.listbutton.ListButtonAdapter;
+import lbs.ntq.connector.schedule.ScheduleAdapter;
+import lbs.ntq.connector.schedule.ScheduleItem;
 import lbs.ntq.navigation.SlidingTabLayout;
 
 public class MainActivity extends BaseActivity {
-    private ListButtonAdapter listButtonAdapter;
-    private DrawerAdapter drawerAdapter;
-
-    private SlidingTabLayout mSlidingTabLayout;
     private TabPagerAdapter tabPagerAdapter;
 
     @Override
@@ -40,6 +44,9 @@ public class MainActivity extends BaseActivity {
         public final int VIEW_BELL_LIST = 0;
         public final int VIEW_SCHEDULING = 1;
         public final int VIEW_SETTING = 2;
+
+        private ListButtonAdapter listButtonAdapter;
+        private ScheduleAdapter scheduleAdapter;
 
         @Override
         public int getCount() {
@@ -86,12 +93,46 @@ public class MainActivity extends BaseActivity {
         private View getBellListView(ViewGroup container) {
             View view = getLayoutInflater().inflate(R.layout.list_button_item,
                     container, false);
+            GridView listButton = (GridView) view.findViewById(R.id.list_button);
+            if (listButtonAdapter == null) {
+                listButtonAdapter = new ListButtonAdapter(MainActivity.this);
+                List<Button> buttonList = new ArrayList<>();
+                Button button = new Button("R370");
+                button.setStatus(ButtonStatus.STOP);
+                buttonList.add(button);
+                button = new Button("MH456");
+                button.setStatus(ButtonStatus.PREPARE);
+                buttonList.add(button);
+                button = new Button("MU796");
+                button.setStatus(ButtonStatus.PLAY);
+                buttonList.add(button);
+                button = new Button("UV136");
+                button.setStatus(ButtonStatus.LOCK);
+                buttonList.add(button);
+                listButtonAdapter.setListButton(buttonList);
+            }
+            listButton.setAdapter(listButtonAdapter);
             return view;
         }
 
         private View getSchedulingView(ViewGroup container) {
             View view = getLayoutInflater().inflate(R.layout.schedule_item,
                     container, false);
+            ListView listSchedule = (ListView) view.findViewById(R.id.list_schedule);
+            if (scheduleAdapter == null) {
+                scheduleAdapter = new ScheduleAdapter(MainActivity.this);
+                List<ScheduleItem> scheduleList = new ArrayList<>();
+                ScheduleItem item = new ScheduleItem();
+                scheduleList.add(item);
+                scheduleList.add(item);
+                scheduleList.add(item);
+                scheduleList.add(item);
+                scheduleList.add(item);
+                scheduleList.add(item);
+                scheduleList.add(item);
+                scheduleAdapter.setItemList(scheduleList);
+            }
+            listSchedule.setAdapter(scheduleAdapter);
             return view;
         }
 
